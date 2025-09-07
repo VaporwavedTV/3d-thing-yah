@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://besxbknfjv4oq"]
+
+[ext_resource type="Script" uid="uid://wo0qroipv73c" path="res://3d dialogue box.gd" id="1_l5lf2"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8n42j"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Sprite3D" type="Sprite3D"]
+texture = SubResource("ViewportTexture_8n42j")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(307, 160)
+render_target_update_mode = 4
+
+[node name="Label" type="Label" parent="SubViewport"]
+offset_right = 308.0
+offset_bottom = 161.0
+text = "How are you doing!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="SubViewport/Label"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 66.985
+offset_top = 48.13
+offset_right = 243.38
+offset_bottom = 114.16
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport/Label/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 0.0149994
+offset_top = -0.130001
+offset_right = 177.015
+offset_bottom = 64.87
+rounded = true
+show_percentage = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." groups=["3d dialogue box", "Interactable"]]
+transform = Transform3D(-0.57, 0, 0, 0, -0.407071, 0, 0, 0, -0.57, 0.0187653, -0.00302124, 0.000354499)
+visible = false
+use_collision = true
+collision_layer = 128
+collision_mask = 128
+size = Vector3(3.06799, 1.61017, 0.001)
+script = ExtResource("1_l5lf2")

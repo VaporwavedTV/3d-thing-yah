@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1o7vkgsgsys8"]
+
+[ext_resource type="Script" uid="uid://dwfv8jk7gujqd" path="res://box but norm.gd" id="1_pirgj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vlwle"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x81q4"]
+
+[node name="object box" type="RigidBody3D" groups=["grab"]]
+collision_layer = 3
+collision_mask = 3
+contact_monitor = true
+max_contacts_reported = 16
+script = ExtResource("1_pirgj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_vlwle")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_x81q4")

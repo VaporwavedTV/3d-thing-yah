@@ -1,0 +1,278 @@
+[gd_scene load_steps=22 format=3 uid="uid://blbu0bo1l5mhd"]
+
+[ext_resource type="Texture2D" uid="uid://cserfwduy681c" path="res://start thig gm.png" id="1_cruko"]
+[ext_resource type="Script" uid="uid://de7frby7bgtj" path="res://button.gd" id="2_bqne6"]
+[ext_resource type="Script" uid="uid://cvwt68k65au6" path="res://sprite_2d.gd" id="2_dq3mq"]
+[ext_resource type="Script" uid="uid://f3rha40pmfl0" path="res://CameraView Window.gd" id="3_qn23h"]
+[ext_resource type="Texture2D" uid="uid://b1rgplvjds7ow" path="res://Files sprite game I made.png" id="4_k1uhn"]
+[ext_resource type="Script" uid="uid://c8otml1x0dxam" path="res://check_button for walkway.gd" id="4_wy26k"]
+[ext_resource type="Script" uid="uid://doq0ds2sb4evh" path="res://Files Button.gd" id="7_7rrbn"]
+[ext_resource type="Texture2D" uid="uid://c5drk7aijgqp" path="res://camera sprite game I made.png" id="7_pgtsp"]
+[ext_resource type="Script" uid="uid://d1mwnnur3x0k3" path="res://Camera button.gd" id="8_a1vod"]
+[ext_resource type="Texture2D" uid="uid://bw487gxlfbq5i" path="res://internet sprite game i made.png" id="8_o7oi2"]
+[ext_resource type="Texture2D" uid="uid://dswl5wg3r4vf8" path="res://Radar sprite game I made.png" id="9_a1vod"]
+[ext_resource type="Texture2D" uid="uid://bkip8b4i1mmo3" path="res://notes sprite game I made.png" id="10_7rrbn"]
+[ext_resource type="Script" uid="uid://dgwcrvo17x6tg" path="res://files window.gd" id="10_o7oi2"]
+[ext_resource type="Texture2D" uid="uid://cb6ncplecv2h2" path="res://clock sprite game I made.png" id="12_meoe4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1r53"]
+bg_color = Color(0.170711, 0.171391, 0.187874, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ra83g"]
+texture = ExtResource("1_cruko")
+expand_margin_left = 5.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0nk2j"]
+texture = ExtResource("1_cruko")
+
+[sub_resource type="Animation" id="Animation_meoe4"]
+resource_name = "Close Application"
+length = 0.18
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraView Window:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2i(928, 206), Vector2i(-120, 1141)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CameraView Window:size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2i(468, 340), Vector2i(233, 226)]
+}
+
+[sub_resource type="Animation" id="Animation_wy26k"]
+resource_name = "Fade in computer"
+length = 0.18
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_k1uhn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CameraView Window:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(928, 206)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CameraView Window:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(468, 340)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gxngq"]
+_data = {
+&"Close Application": SubResource("Animation_meoe4"),
+&"Fade in computer": SubResource("Animation_wy26k"),
+&"RESET": SubResource("Animation_k1uhn")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 60.0
+offset_right = 1488.0
+offset_bottom = 839.0
+color = Color(0.536972, 0.623759, 0.645473, 1)
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.862745)
+layout_mode = 0
+offset_left = 107.0
+offset_top = 759.0
+offset_right = 1488.0
+offset_bottom = 839.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s1r53")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 6.0
+offset_right = 88.0
+offset_bottom = 51.0
+scale = Vector2(1.55182, 1.54519)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_ra83g")
+text = "Start"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1206.0
+offset_top = 22.0
+offset_right = 1352.0
+offset_bottom = 64.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_0nk2j")
+text = " 12:30 PM "
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 306.0
+offset_right = 384.0
+offset_bottom = 337.0
+text = "left"
+script = ExtResource("2_bqne6")
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 218.0
+offset_right = 380.0
+offset_bottom = 242.0
+mouse_default_cursor_shape = 2
+keep_pressed_outside = true
+script = ExtResource("4_wy26k")
+
+[node name="Files Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 618.0
+offset_right = 411.0
+offset_bottom = 896.0
+scale = Vector2(0.466981, 0.466981)
+toggle_mode = true
+icon = ExtResource("4_k1uhn")
+flat = true
+script = ExtResource("7_7rrbn")
+
+[node name="Camera Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 87.0
+offset_right = 354.0
+offset_bottom = 308.0
+scale = Vector2(0.568344, 0.568344)
+icon = ExtResource("7_pgtsp")
+flat = true
+script = ExtResource("8_a1vod")
+
+[node name="Internet Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 209.0
+offset_right = 355.0
+offset_bottom = 430.0
+scale = Vector2(0.593929, 0.593929)
+icon = ExtResource("8_o7oi2")
+flat = true
+
+[node name="Radar Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 340.0
+offset_right = 416.0
+offset_bottom = 618.0
+scale = Vector2(0.480045, 0.480045)
+icon = ExtResource("9_a1vod")
+flat = true
+
+[node name="Clock Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 481.0
+offset_right = 368.0
+offset_bottom = 712.0
+scale = Vector2(0.552246, 0.552246)
+icon = ExtResource("12_meoe4")
+flat = true
+
+[node name="CameraView Window" type="Window" parent="."]
+handle_input_locally = false
+title = "Camera View"
+position = Vector2i(928, 206)
+size = Vector2i(468, 340)
+extend_to_title = true
+min_size = Vector2i(200, 200)
+max_size = Vector2i(1000, 1000)
+keep_title_visible = true
+theme_override_constants/title_outline_size = 5
+theme_override_font_sizes/title_font_size = 24
+script = ExtResource("3_qn23h")
+
+[node name="Sprite2D" type="Sprite2D" parent="CameraView Window"]
+position = Vector2(393, 268)
+script = ExtResource("2_dq3mq")
+
+[node name="Files Window" type="Window" parent="."]
+position = Vector2i(405, 56)
+size = Vector2i(440, 355)
+script = ExtResource("10_o7oi2")
+
+[node name="Notes Button" type="Button" parent="Files Window"]
+offset_left = 22.0
+offset_top = 19.0
+offset_right = 300.0
+offset_bottom = 297.0
+scale = Vector2(0.411534, 0.411534)
+icon = ExtResource("10_7rrbn")
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gxngq")
+}
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="CheckButton" to="CheckButton" method="_on_pressed"]
+[connection signal="pressed" from="Files Button" to="Files Button" method="_on_pressed"]
+[connection signal="pressed" from="Camera Button" to="Camera Button" method="_on_pressed"]

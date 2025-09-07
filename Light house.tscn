@@ -1,0 +1,158 @@
+[gd_scene load_steps=8 format=3 uid="uid://bks1mx14ofx6a"]
+
+[ext_resource type="Texture2D" uid="uid://brqpul5ifvjmb" path="res://Fence but texture.png" id="1_3q05h"]
+[ext_resource type="Texture2D" uid="uid://bama4lkj5rvbs" path="res://materials/blue_metal_plate_diff_2k.jpg" id="1_tbciw"]
+[ext_resource type="Script" uid="uid://dpsu1s145ksjl" path="res://lighthouselight.gd" id="3_u3cm5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3cm5"]
+albedo_texture = ExtResource("1_tbciw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbciw"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_3q05h")
+metallic = 0.75
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m13lq"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_3q05h")
+metallic = 0.75
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jw7f"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_3q05h")
+metallic = 0.75
+roughness = 0.3
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGTorus3D5" type="CSGTorus3D" parent="."]
+transform = Transform3D(5.04107, 0, 0, 0, 125.664, 0, 0, 0, 5.04107, 0, 27.1656, 0)
+material_override = SubResource("StandardMaterial3D_u3cm5")
+transparency = 0.45
+cast_shadow = 0
+inner_radius = 0.944551
+sides = 32
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78448, -3.11043, -5.1445)
+use_collision = true
+
+[node name="CSGTorus3D2" type="CSGTorus3D" parent="CSGCombiner3D"]
+transform = Transform3D(5.04107, 0, 0, 0, 82.9479, 0, 0, 0, 5.04107, -1.78448, 33.8412, 5.1445)
+inner_radius = 0.930822
+sides = 32
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78448, 35.5744, 5.1445)
+radius = 4.94434
+height = 3.80786
+sides = 32
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78448, 34.4599, 5.1445)
+radius = 5.7793
+height = 3.31799
+sides = 32
+
+[node name="CSGTorus3D3" type="CSGTorus3D" parent="."]
+transform = Transform3D(5.04107, 0, 0, 0, 82.9479, 0, 0, 0, 5.04107, 0, -1.33549, 0)
+material_override = SubResource("StandardMaterial3D_tbciw")
+use_collision = true
+inner_radius = 2.19463
+outer_radius = 2.16713
+sides = 32
+
+[node name="CSGTorus3D4" type="CSGTorus3D" parent="."]
+transform = Transform3D(5.04107, 0, 0, 0, 82.9479, 0, 0, 0, 5.04107, 0, 23.7768, 0)
+material_override = SubResource("StandardMaterial3D_m13lq")
+use_collision = true
+inner_radius = 1.52518
+outer_radius = 1.50463
+sides = 32
+
+[node name="CSGTorus3D7" type="CSGTorus3D" parent="."]
+transform = Transform3D(5.04107, 0, 0, 0, 103.077, 0, 0, 0, 5.04107, 0, 7.38074, 0)
+material_override = SubResource("StandardMaterial3D_7jw7f")
+use_collision = true
+inner_radius = 1.25003
+outer_radius = 1.23828
+sides = 32
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1.15, 0, 0, 0, 3.081, 0, 0, 0, 1.15, 0, 2.85613, 0)
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0301857, -0.625, 5.20128)
+size = Vector3(0.216797, 2.25, 10.8724)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.29231, -0.625, 0.0312881)
+size = Vector3(0.216797, 2.25, 10.5553)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0301857, -0.625, -5.27621)
+size = Vector3(0.216797, 2.25, 10.8724)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35428, -0.625, 0.0312881)
+size = Vector3(0.216797, 2.25, 10.5553)
+
+[node name="CSGCombiner3D3" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D3"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.0879037, 4.2876, -0.088193)
+size = Vector3(0.216797, 11.9626, 12.1079)
+
+[node name="CSGTorus3D6" type="CSGTorus3D" parent="CSGCombiner3D3"]
+transform = Transform3D(5.04107, 0, 0, 0, -0.648982, 0, 0, 0, 5.04107, 0, 6.90931, 0)
+inner_radius = 1.25003
+outer_radius = 0.945766
+sides = 32
+
+[node name="CSGTorus3D2" type="CSGTorus3D" parent="CSGCombiner3D3"]
+transform = Transform3D(5.04107, 0, 0, 0, 250.54, 0, 0, 0, 5.04107, 0, 5.63822, 0)
+inner_radius = 1.25003
+outer_radius = 1.23828
+sides = 32
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGCombiner3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.0358, 0)
+radius = 7.71582
+height = 0.57477
+sides = 32
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGCombiner3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.74274, 0)
+radius = 11.0498
+height = 14.2183
+sides = 32
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="CSGCombiner3D3"]
+transform = Transform3D(5.04107, 0, 0, 0, 293.232, 0, 0, 0, 5.04107, 0, 15.4065, 0)
+inner_radius = 0.930822
+sides = 32
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.9674, 0)
+script = ExtResource("3_u3cm5")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+light_energy = 16.0
+light_volumetric_fog_energy = 16.0
+shadow_enabled = true
+spot_range = 316.068
+spot_angle = 21.676

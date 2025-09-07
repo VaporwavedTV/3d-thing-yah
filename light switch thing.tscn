@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg25wvy2573fr"]
+
+[ext_resource type="Script" uid="uid://c5th2ag6yktvj" path="res://light_switch_thing.gd" id="1_63d34"]
+[ext_resource type="Material" uid="uid://bp8267ugpfgtr" path="res://materials/wall concrete prob.tres" id="1_aao8u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2xsbh"]
+size = Vector3(0.794922, 1.1239, 0.140137)
+
+[node name="Node3D" type="StaticBody3D" groups=["Interactable"]]
+script = ExtResource("1_63d34")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." groups=["Interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102509, 0.0627937, 0.407715)
+size = Vector3(0.794983, 1.12559, 0.18457)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D" groups=["Interactable"]]
+transform = Transform3D(1, 0, 0, 0, 0.985639, 0.168868, 0, -0.168868, 0.985639, 0.0141196, 0.0328038, 0.0639113)
+size = Vector3(0.315679, 0.752348, 0.18457)
+material = ExtResource("1_aao8u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102539, 0.0619507, 0.43392)
+shape = SubResource("BoxShape3D_2xsbh")

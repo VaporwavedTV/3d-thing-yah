@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://uhrh0fu4yqmk"]
+
+[ext_resource type="PackedScene" uid="uid://c7c01a0m3ttlu" path="res://grass_patch.tscn" id="1_kq1v7"]
+
+[node name="its a thing" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34743, -0.0543547, -0.319235)
+
+[node name="grass patch" parent="." instance=ExtResource("1_kq1v7")]

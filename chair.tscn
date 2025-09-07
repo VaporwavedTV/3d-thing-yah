@@ -1,0 +1,127 @@
+[gd_scene load_steps=16 format=3 uid="uid://blimdsipmrwgr"]
+
+[ext_resource type="Script" uid="uid://wldep13w665e" path="res://chair.gd" id="1_32mg2"]
+[ext_resource type="Texture2D" uid="uid://boloa18kkt8a6" path="res://pavement tiles/rubber_tiles_diff_1k.jpg" id="2_s223b"]
+[ext_resource type="Texture2D" uid="uid://cebgmfqk0pn6g" path="res://pavement tiles/worn_shutter_diff_1k.jpg" id="3_sp2w3"]
+
+[sub_resource type="Animation" id="Animation_grfgs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.28519, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pelxo"]
+resource_name = "sitmedown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.28519, 0), Vector3(0, 1.32171, -1.05287), Vector3(0, 2.09925, -2.30056)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_thegh"]
+_data = {
+&"RESET": SubResource("Animation_grfgs"),
+&"sitmedown": SubResource("Animation_pelxo")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0n73g"]
+albedo_texture = ExtResource("2_s223b")
+
+[sub_resource type="BoxMesh" id="BoxMesh_cjxr8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lw602"]
+albedo_texture = ExtResource("2_s223b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sj0he"]
+albedo_texture = ExtResource("2_s223b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bt5tc"]
+albedo_texture = ExtResource("2_s223b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bnmh"]
+albedo_texture = ExtResource("3_sp2w3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7k4g"]
+albedo_texture = ExtResource("3_sp2w3")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e7rti"]
+size = Vector3(1.63605, 1.65207, 1.51782)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ll3l"]
+size = Vector3(0.224731, 2.0415, 1.52074)
+
+[node name="Chair" type="StaticBody3D" groups=["Interactable"]]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_32mg2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../satplace")
+libraries = {
+"": SubResource("AnimationLibrary_thegh")
+}
+speed_scale = 1.5
+
+[node name="satplace" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28519, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="satplace"]
+visible = false
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.220496, 0, 0, 0, -1.09764e-08, -1.40564, 0, 0.251111, -6.14424e-08, -0.656248, -0.823888, 0.687034)
+material_override = SubResource("StandardMaterial3D_0n73g")
+mesh = SubResource("BoxMesh_cjxr8")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="MeshInstance3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 8.88178e-16, 1, 6.11258, 4.76837e-07, 0)
+material_override = SubResource("StandardMaterial3D_lw602")
+mesh = SubResource("BoxMesh_cjxr8")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 0, 1, 0, -4.86173, 0)
+material_override = SubResource("StandardMaterial3D_sj0he")
+mesh = SubResource("BoxMesh_cjxr8")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 0, 1, 6.11258, -4.86173, 0)
+material_override = SubResource("StandardMaterial3D_bt5tc")
+mesh = SubResource("BoxMesh_cjxr8")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="MeshInstance3D4"]
+transform = Transform3D(0.993354, 3.48461e-08, 1.12343, -4.41753e-09, 6.082, -2.4898e-09, -0.0180541, -3.1562e-10, 1.52099, -0.710561, -2.42448, -1.38761)
+material_override = SubResource("StandardMaterial3D_0bnmh")
+mesh = SubResource("BoxMesh_cjxr8")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D4"]
+transform = Transform3D(7.42466, 0, 0, 0, -4.37114e-08, 6.05731, 0, -0.178645, -4.73006e-08, 2.97624, -2.42378, -0.586131)
+material_override = SubResource("StandardMaterial3D_k7k4g")
+mesh = SubResource("BoxMesh_cjxr8")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055933, -0.695206, 0.0765381)
+shape = SubResource("BoxShape3D_e7rti")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.99324, -0.116081, 0, 0.116081, 0.99324, 0, 0, 0, 1, -0.81658, 1.1744, 0.0774612)
+shape = SubResource("BoxShape3D_3ll3l")

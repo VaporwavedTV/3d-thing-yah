@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://63sx68b5bbwc"
+path="res://.godot/imported/Wolves of the Revolution.mp3-de831aa36963b3664d2cc33280914670.mp3str"
+
+[deps]
+
+source_file="res://Wolves of the Revolution.mp3"
+dest_files=["res://.godot/imported/Wolves of the Revolution.mp3-de831aa36963b3664d2cc33280914670.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

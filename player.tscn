@@ -1,0 +1,189 @@
+[gd_scene load_steps=14 format=3 uid="uid://dcd71cx1slyx1"]
+
+[ext_resource type="Script" uid="uid://csd01m3njgjmw" path="res://player.gd" id="1_tj0i2"]
+[ext_resource type="Script" uid="uid://cpooa646wftll" path="res://playercamera.gd" id="2_6ood7"]
+[ext_resource type="Script" uid="uid://tlvw1v3vgtr" path="res://raycast.gd" id="3_678r2"]
+[ext_resource type="Script" uid="uid://dth1s2gnvmq63" path="res://flashlight.gd" id="4_xhbfy"]
+[ext_resource type="Script" uid="uid://hn5n5j3m4i6s" path="res://Pause Menu.gd" id="5_sweqy"]
+[ext_resource type="FontVariation" uid="uid://d0ele2j0el6nd" path="res://font for jumpy.tres" id="6_2hs0m"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_axi0x"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8clvy"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yuw42"]
+points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
+
+[sub_resource type="SphereMesh" id="SphereMesh_fpuqt"]
+
+[sub_resource type="Animation" id="Animation_0r0b5"]
+resource_name = "Headbob_walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.05, 0.2, 0), Vector3(-0.05, 0, 0), Vector3(-0.1, 0.2, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q00lf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ct50u"]
+_data = {
+&"Headbob_walk": SubResource("Animation_0r0b5"),
+&"RESET": SubResource("Animation_q00lf")
+}
+
+[node name="player" type="CharacterBody3D"]
+platform_on_leave = 2
+script = ExtResource("1_tj0i2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0136515, 0.0142315, -0.0102026)
+mesh = SubResource("CapsuleMesh_axi0x")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.499312, 0)
+shape = SubResource("SphereShape3D_8clvy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_yuw42")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+script = ExtResource("2_6ood7")
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+current = true
+
+[node name="raycast" type="RayCast3D" parent="head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -0.106111, -0.999374, 0, 2.99812, -0.0353704, 0, -0.0795907, -0.0789367)
+collision_mask = 143
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 1
+script = ExtResource("3_678r2")
+
+[node name="hold" type="Node3D" parent="head/Camera3D/raycast"]
+transform = Transform3D(0.00698999, -0.000374074, -1.17667e-05, -4.41529e-06, -8.2413e-05, 0.00233188, -0.000374256, -0.00698562, -0.000247278, 0.000596479, -0.882839, 0.0407634)
+
+[node name="ProgressBar" type="ProgressBar" parent="head/Camera3D/raycast/hold"]
+visible = false
+offset_left = 552.0
+offset_top = 557.0
+offset_right = 1050.0
+offset_bottom = 625.0
+rounded = true
+show_percentage = false
+
+[node name="E to Interact" type="TextEdit" parent="head/Camera3D/raycast"]
+visible = false
+offset_left = 750.0
+offset_top = 459.0
+offset_right = 853.0
+offset_bottom = 494.0
+text = "E to interact"
+
+[node name="RMB to Grab" type="TextEdit" parent="head/Camera3D/raycast"]
+visible = false
+offset_left = 750.0
+offset_top = 459.0
+offset_right = 856.0
+offset_bottom = 494.0
+text = "RMB to Grab"
+
+[node name="dot look" type="MeshInstance3D" parent="head/Camera3D"]
+transform = Transform3D(0.007, 0, 0, 0, 0.007, 0, 0, 0, 0.007, 0, -0.000925899, -0.523055)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_fpuqt")
+skeleton = NodePath("../../../MeshInstance3D2")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="head/Camera3D/dot look"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.207866, 0, 2.34486)
+spot_range = 0.0184009
+spot_angle = 26.8901
+
+[node name="flashlight" type="SpotLight3D" parent="head/Camera3D"]
+visible = false
+light_color = Color(1, 0.783375, 0.393885, 1)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 5.0
+spot_range = 26.0215
+spot_angle = 35.0241
+script = ExtResource("4_xhbfy")
+
+[node name="headbob" type="AnimationPlayer" parent="head/Camera3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_ct50u")
+}
+
+[node name="raycast2" type="RayCast3D" parent="head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -0.106111, -0.999374, 0, 2.99812, -0.0353704, 0, -0.0795907, -0.0789367)
+collision_mask = 143
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 1
+
+[node name="Pause Menu" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 675.0
+offset_top = 297.0
+offset_right = 715.0
+offset_bottom = 337.0
+scale = Vector2(0.341178, 0.341178)
+script = ExtResource("5_sweqy")
+
+[node name="PanelContainer" type="PanelContainer" parent="Pause Menu"]
+layout_mode = 2
+offset_left = 23.0
+offset_top = 17.0
+offset_right = 266.0
+offset_bottom = 298.0
+scale = Vector2(2.80971, 3.1584)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause Menu/PanelContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="Pause Menu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2hs0m")
+theme_override_font_sizes/font_size = 60
+text = "Resume"
+
+[node name="Restart" type="Button" parent="Pause Menu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2hs0m")
+theme_override_font_sizes/font_size = 60
+text = "Restart"
+
+[node name="Quit" type="Button" parent="Pause Menu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2hs0m")
+theme_override_font_sizes/font_size = 60
+text = "Quit"
+
+[connection signal="pressed" from="Pause Menu/PanelContainer/VBoxContainer/Resume" to="Pause Menu" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause Menu/PanelContainer/VBoxContainer/Restart" to="Pause Menu" method="_on_restart_pressed"]
+[connection signal="pressed" from="Pause Menu/PanelContainer/VBoxContainer/Quit" to="Pause Menu" method="_on_quit_pressed"]

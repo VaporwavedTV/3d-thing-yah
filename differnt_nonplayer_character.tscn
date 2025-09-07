@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://x3lkxc76bg0e"]
+
+[ext_resource type="Script" uid="uid://b2x6yfr461bhw" path="res://differnt_nonplayer_character.gd" id="1_ca0bs"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6qnjt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0eo7p"]
+
+[node name="Differnt nonplayer character" type="CharacterBody3D" groups=["Interactable"]]
+script = ExtResource("1_ca0bs")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 387.0
+offset_top = 745.0
+offset_right = 970.0
+offset_bottom = 770.0
+scale = Vector2(1.49714, 1.57714)
+text = " Hey there, hows it going!"
+fit_content = true
+
+[node name="ColorRect" type="ColorRect" parent="RichTextLabel"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -69.4657
+offset_top = -80.1528
+offset_right = -29.4657
+offset_bottom = -40.1528
+scale = Vector2(18.2652, 4.78998)
+color = Color(0.171969, 0, 0.0152593, 0.396078)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_6qnjt")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_0eo7p")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdr2rom4754ia"]
+
+[ext_resource type="Script" uid="uid://bf6w2lditevrq" path="res://the_cube.gd" id="1_hgh2h"]
+
+[node name="the cube" type="Node3D"]
+script = ExtResource("1_hgh2h")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+cast_shadow = 0
+size = Vector3(100, 100, 100)

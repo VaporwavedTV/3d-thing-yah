@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwe07x5j63eom"]
+
+[ext_resource type="Texture2D" uid="uid://c871sqpad6vvo" path="res://pavement tiles/textures/metal_plate_02_disp_1k.png" id="1_0vavv"]
+[ext_resource type="Texture2D" uid="uid://b5xept0cgr010" path="res://pavement tiles/textures/stone_tile_wall_disp_1k.png" id="2_7dehw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1e2w"]
+albedo_texture = ExtResource("1_0vavv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rjdi"]
+albedo_texture = ExtResource("2_7dehw")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.97814, 0, 0.207946, 0, 1, 0, -0.207946, 0, 0.97814, 1.09704, 0, 0)
+material_override = SubResource("StandardMaterial3D_k1e2w")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D3"]
+transform = Transform3D(0.97814, 0, -0.207946, 0, 1, 0, 0.207946, 0, 0.97814, -1.07305, 0, -0.228124)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D3"]
+transform = Transform3D(0.993481, 0, -0.114001, 0, 1, 0, 0.114001, 0, 0.993481, -1.21783, 0, 0.879709)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D3"]
+transform = Transform3D(0.984334, 0, 0.176312, 0, 1, 0, -0.176312, 0, 0.984334, -1.02289, 0.740269, 0.0548491)
+size = Vector3(1, 0.528809, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D3"]
+transform = Transform3D(0.961713, 0, 0.27406, 0, 1, 0, -0.27406, 0, 0.961713, -0.30088, -0.142116, 1.0852)
+material_override = SubResource("StandardMaterial3D_8rjdi")
+size = Vector3(0.61731, 0.655273, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21482, 1.22464, -0.0491731)
+size = Vector3(0.687439, 0.528809, 0.71582)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37903, -0.220416, 1.7155)
+size = Vector3(0.687439, 0.528809, 0.71582)

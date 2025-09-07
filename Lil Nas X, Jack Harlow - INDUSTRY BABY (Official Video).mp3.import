@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cyx0u3cexu8rx"
+path="res://.godot/imported/Lil Nas X, Jack Harlow - INDUSTRY BABY (Official Video).mp3-4ff2c56a2f5633a49928b2b987638ef4.mp3str"
+
+[deps]
+
+source_file="res://Lil Nas X, Jack Harlow - INDUSTRY BABY (Official Video).mp3"
+dest_files=["res://.godot/imported/Lil Nas X, Jack Harlow - INDUSTRY BABY (Official Video).mp3-4ff2c56a2f5633a49928b2b987638ef4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

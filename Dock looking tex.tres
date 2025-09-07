@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cul1yk3mgvavd"]
+
+[ext_resource type="Texture2D" uid="uid://b3c2sag2bxj4j" path="res://pavement tiles/wood_floor_diff_1k.jpg" id="1_lhm2x"]
+
+[resource]
+albedo_color = Color(0.419608, 0.407843, 0.458824, 1)
+albedo_texture = ExtResource("1_lhm2x")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true

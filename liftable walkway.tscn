@@ -1,0 +1,249 @@
+[gd_scene load_steps=8 format=3 uid="uid://d4hyxoxmj5bbv"]
+
+[ext_resource type="Material" uid="uid://cu3exexojf85v" path="res://materials/im tired of naming wall.tres" id="1_fn4id"]
+[ext_resource type="Texture2D" uid="uid://jid4f2gbfb7f" path="res://materials/justa test grate.png" id="2_lujx7"]
+[ext_resource type="AudioStream" uid="uid://cpj3514pon2c2" path="res://the people who made it are called colchrishadfield and danjfilms.mp3" id="3_br6xs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dx6nc"]
+transparency = 4
+albedo_texture = ExtResource("2_lujx7")
+metallic = 0.75
+roughness = 0.4
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="Animation" id="Animation_br6xs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Node3D5:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5708)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Node3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nsp5f"]
+resource_name = "liftingwalk"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Node3D5:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.85, 2.1, 3),
+"transitions": PackedFloat32Array(1.03527, 1, 1, 1.10957),
+"update": 0,
+"values": [Vector3(0, 0, 1.5708), Vector3(0, 0, 1.91986), Vector3(0, 0, 2.44346), Vector3(0, 0, 2.79253)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Node3D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.85, 2.1, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 0.349066), Vector3(0, 3.14159, 0.872665), Vector3(0, 3.14159, 1.22173)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cgttu"]
+_data = {
+&"RESET": SubResource("Animation_br6xs"),
+&"liftingwalk": SubResource("Animation_nsp5f")
+}
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Node3D" type="Node3D" parent="Node3D"]
+transform = Transform3D(-1, 0, 2.53518e-06, 0, 1, 0, -2.53518e-06, 0, -1, 18.2644, 0.28685, 0.525643)
+
+[node name="Node3D2" type="Node3D" parent="Node3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.74259, -0.28685, -0.507664)
+
+[node name="Node3D5" type="Node3D" parent="Node3D/Node3D/Node3D2"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -6.76191, 0.327017, 0.517776)
+
+[node name="Node3D3" type="Node3D" parent="Node3D/Node3D/Node3D2/Node3D5"]
+transform = Transform3D(-3.90548e-08, 1, -5.96046e-08, -1, -3.90548e-08, -6.51926e-09, -6.51926e-09, 5.96046e-08, 1, -2.68221e-07, -6.17201, 0)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Node3D/Node3D/Node3D2/Node3D5/Node3D3"]
+transform = Transform3D(1, -6.66173e-16, 0, -1.38778e-16, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("1_fn4id")
+use_collision = true
+size = Vector3(12.5412, 0.244873, 3.27867)
+
+[node name="Node3D" type="Node3D" parent="Node3D/Node3D/Node3D2/Node3D5/Node3D3"]
+transform = Transform3D(4.2195e-07, -1, -9.12089e-08, 8.9407e-08, 4.8368e-08, -1, 1, -5.02307e-08, 5.96046e-08, 0.00493634, 1.55265, -1.5641)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Node3D/Node3D/Node3D2/Node3D5/Node3D3/Node3D"]
+transform = Transform3D(1, 0, 4.23516e-22, 0, 1, -8.35187e-23, -2.11758e-22, -8.35187e-23, 1, 0, 0, 0)
+material_override = ExtResource("1_fn4id")
+radius = 0.0756689
+height = 12.5355
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Node3D/Node3D/Node3D2/Node3D5/Node3D3/Node3D/CSGCylinder3D"]
+transform = Transform3D(1, -5.09287e-07, 1.00977e-08, -3.90548e-08, -0.0123918, -0.999923, 3.71921e-08, 0.999923, -0.0123917, 0, 0, 0.776036)
+radius = 0.0756689
+height = 1.57118
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Node3D/Node3D/Node3D2/Node3D5/Node3D3/Node3D/CSGCylinder3D"]
+transform = Transform3D(1, -5.09287e-07, 1.00977e-08, -3.90548e-08, -0.0123918, -0.999923, 3.71921e-08, 0.999923, -0.0123917, 3.57628e-07, 6.27464, 0.786137)
+radius = 0.0756689
+height = 1.72212
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Node3D/Node3D/Node3D2/Node3D5/Node3D3/Node3D/CSGCylinder3D"]
+transform = Transform3D(1, -5.09287e-07, 1.00977e-08, -3.90548e-08, -0.0123918, -0.999923, 3.71921e-08, 0.999923, -0.0123917, -2.38419e-07, -6.25095, 0.786137)
+material_override = ExtResource("1_fn4id")
+radius = 0.0756689
+height = 1.72212
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Node3D/Node3D/Node3D2/Node3D5/Node3D3/Node3D"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, -0.999999, -4.37114e-08, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 0, 5.96046e-08, 0.821527)
+material_override = SubResource("StandardMaterial3D_dx6nc")
+use_collision = true
+size = Vector3(12.5314, 0.0314941, 1.59337)
+
+[node name="Node3D2" type="Node3D" parent="Node3D/Node3D/Node3D2/Node3D5/Node3D3"]
+transform = Transform3D(4.2195e-07, -1, -9.12089e-08, 8.9407e-08, 4.8368e-08, -1, 1, -5.02307e-08, 5.96046e-08, 0.00493777, 1.55265, 1.56449)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Node3D/Node3D/Node3D2/Node3D5/Node3D3/Node3D2"]
+transform = Transform3D(1, 0, 4.23516e-22, 0, 1, -8.35187e-23, -2.11758e-22, -8.35187e-23, 1, 0, 0, 0)
+material_override = ExtResource("1_fn4id")
+radius = 0.0756689
+height = 12.5355
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Node3D/Node3D/Node3D2/Node3D5/Node3D3/Node3D2/CSGCylinder3D"]
+transform = Transform3D(1, -5.09287e-07, 1.00977e-08, -3.90548e-08, -0.0123918, -0.999923, 3.71921e-08, 0.999923, -0.0123917, 0, 0, 0.776036)
+radius = 0.0756689
+height = 1.57118
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Node3D/Node3D/Node3D2/Node3D5/Node3D3/Node3D2/CSGCylinder3D"]
+transform = Transform3D(1, -5.09287e-07, 1.00977e-08, -3.90548e-08, -0.0123918, -0.999923, 3.71921e-08, 0.999923, -0.0123917, 3.57628e-07, 6.27464, 0.786137)
+radius = 0.0756689
+height = 1.72212
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Node3D/Node3D/Node3D2/Node3D5/Node3D3/Node3D2/CSGCylinder3D"]
+transform = Transform3D(1, -5.09287e-07, 1.00977e-08, -3.90548e-08, -0.0123918, -0.999923, 3.71921e-08, 0.999923, -0.0123917, -2.38419e-07, -6.25095, 0.786137)
+radius = 0.0756689
+height = 1.72212
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Node3D/Node3D/Node3D2/Node3D5/Node3D3/Node3D2"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, -0.999999, -4.37114e-08, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 0, 5.96046e-08, 0.821527)
+material_override = SubResource("StandardMaterial3D_dx6nc")
+use_collision = true
+size = Vector3(12.5314, 0.0314941, 1.59337)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Node3D/Node3D2"]
+root_node = NodePath("../../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_cgttu")
+}
+
+[node name="Node3D5" type="Node3D" parent="Node3D"]
+transform = Transform3D(-3.61999e-06, -1, 0, 1, -3.61999e-06, 0, 0, 0, 1, -6.76191, 0.327017, 0.517776)
+
+[node name="Node3D3" type="Node3D" parent="Node3D/Node3D5"]
+transform = Transform3D(-3.90548e-08, 1, -5.96046e-08, -1, -3.90548e-08, -6.51926e-09, -6.51926e-09, 5.96046e-08, 1, -2.68221e-07, -6.17201, 0)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Node3D/Node3D5/Node3D3"]
+transform = Transform3D(1, -6.66173e-16, 0, -1.38778e-16, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("1_fn4id")
+use_collision = true
+size = Vector3(12.5412, 0.244873, 3.27867)
+
+[node name="Node3D" type="Node3D" parent="Node3D/Node3D5/Node3D3"]
+transform = Transform3D(4.2195e-07, -1, -9.12089e-08, 8.9407e-08, 4.8368e-08, -1, 1, -5.02307e-08, 5.96046e-08, 0.00493634, 1.55265, -1.5641)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Node3D/Node3D5/Node3D3/Node3D"]
+transform = Transform3D(1, 0, 4.23516e-22, 0, 1, -8.35187e-23, -2.11758e-22, -8.35187e-23, 1, 0, 0, 0)
+material_override = ExtResource("1_fn4id")
+radius = 0.0756689
+height = 12.5355
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Node3D/Node3D5/Node3D3/Node3D/CSGCylinder3D"]
+transform = Transform3D(1, -5.09287e-07, 1.00977e-08, -3.90548e-08, -0.0123918, -0.999923, 3.71921e-08, 0.999923, -0.0123917, 0, 0, 0.776036)
+radius = 0.0756689
+height = 1.57118
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Node3D/Node3D5/Node3D3/Node3D/CSGCylinder3D"]
+transform = Transform3D(1, -5.09287e-07, 1.00977e-08, -3.90548e-08, -0.0123918, -0.999923, 3.71921e-08, 0.999923, -0.0123917, 3.57628e-07, 6.27464, 0.786137)
+radius = 0.0756689
+height = 1.72212
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Node3D/Node3D5/Node3D3/Node3D/CSGCylinder3D"]
+transform = Transform3D(1, -5.09287e-07, 1.00977e-08, -3.90548e-08, -0.0123918, -0.999923, 3.71921e-08, 0.999923, -0.0123917, -2.38419e-07, -6.25095, 0.786137)
+material_override = ExtResource("1_fn4id")
+radius = 0.0756689
+height = 1.72212
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Node3D/Node3D5/Node3D3/Node3D"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, -0.999999, -4.37114e-08, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 0, 5.96046e-08, 0.821527)
+material_override = SubResource("StandardMaterial3D_dx6nc")
+use_collision = true
+size = Vector3(12.5314, 0.0314941, 1.59337)
+
+[node name="Node3D2" type="Node3D" parent="Node3D/Node3D5/Node3D3"]
+transform = Transform3D(4.2195e-07, -1, -9.12089e-08, 8.9407e-08, 4.8368e-08, -1, 1, -5.02307e-08, 5.96046e-08, 0.00493777, 1.55265, 1.56449)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Node3D/Node3D5/Node3D3/Node3D2"]
+transform = Transform3D(1, 0, 4.23516e-22, 0, 1, -8.35187e-23, -2.11758e-22, -8.35187e-23, 1, 0, 0, 0)
+material_override = ExtResource("1_fn4id")
+radius = 0.0756689
+height = 12.5355
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Node3D/Node3D5/Node3D3/Node3D2/CSGCylinder3D"]
+transform = Transform3D(1, -5.09287e-07, 1.00977e-08, -3.90548e-08, -0.0123918, -0.999923, 3.71921e-08, 0.999923, -0.0123917, 0, 0, 0.776036)
+radius = 0.0756689
+height = 1.57118
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Node3D/Node3D5/Node3D3/Node3D2/CSGCylinder3D"]
+transform = Transform3D(1, -5.09287e-07, 1.00977e-08, -3.90548e-08, -0.0123918, -0.999923, 3.71921e-08, 0.999923, -0.0123917, 3.57628e-07, 6.27464, 0.786137)
+radius = 0.0756689
+height = 1.72212
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Node3D/Node3D5/Node3D3/Node3D2/CSGCylinder3D"]
+transform = Transform3D(1, -5.09287e-07, 1.00977e-08, -3.90548e-08, -0.0123918, -0.999923, 3.71921e-08, 0.999923, -0.0123917, -2.38419e-07, -6.25095, 0.786137)
+radius = 0.0756689
+height = 1.72212
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Node3D/Node3D5/Node3D3/Node3D2"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, -0.999999, -4.37114e-08, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 0, 5.96046e-08, 0.821527)
+material_override = SubResource("StandardMaterial3D_dx6nc")
+use_collision = true
+size = Vector3(12.5314, 0.0314941, 1.59337)
+
+[node name="LiftingWalk Player" type="AnimationPlayer" parent="Node3D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_cgttu")
+}
+speed_scale = 0.6
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.58255, -4.76837e-07, 0.534582)
+stream = ExtResource("3_br6xs")
+volume_db = 8.511
+unit_size = 20.63

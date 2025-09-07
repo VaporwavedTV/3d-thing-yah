@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl0t5bv8vd5jr"]
+
+[ext_resource type="Script" uid="uid://dsn0r7umhh1nd" path="res://Sounds rigid.gd" id="1_tw342"]
+[ext_resource type="AudioStream" uid="uid://ch6r8d2pv600f" path="res://Recording (10).mp3" id="2_heiv2"]
+
+[node name="Sounds Rigid" type="Node3D"]
+script = ExtResource("1_tw342")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_heiv2")
+max_polyphony = 10

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bo31yk0fdbmng"
+path="res://.godot/imported/SPEED OF HELL.mp3-53b589cf12f5d06483aee27219133ad2.mp3str"
+
+[deps]
+
+source_file="res://SPEED OF HELL.mp3"
+dest_files=["res://.godot/imported/SPEED OF HELL.mp3-53b589cf12f5d06483aee27219133ad2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

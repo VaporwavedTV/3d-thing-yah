@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfj2hky5dn2hu"
+path="res://.godot/imported/MiniMusicMan - Crazy La Paint (Markiplier Outro 2015).mp3-aee09a333c9b2e55691f3ca7f92a26c4.mp3str"
+
+[deps]
+
+source_file="res://MiniMusicMan - Crazy La Paint (Markiplier Outro 2015).mp3"
+dest_files=["res://.godot/imported/MiniMusicMan - Crazy La Paint (Markiplier Outro 2015).mp3-aee09a333c9b2e55691f3ca7f92a26c4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

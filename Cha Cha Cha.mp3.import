@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbvnh5c8326sn"
+path="res://.godot/imported/Cha Cha Cha.mp3-3fc408f070ec23802e67d9184e4070a3.mp3str"
+
+[deps]
+
+source_file="res://Cha Cha Cha.mp3"
+dest_files=["res://.godot/imported/Cha Cha Cha.mp3-3fc408f070ec23802e67d9184e4070a3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

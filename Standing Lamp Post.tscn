@@ -1,0 +1,124 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1crgxxeph2fg"]
+
+[ext_resource type="Texture2D" uid="uid://bama4lkj5rvbs" path="res://materials/blue_metal_plate_diff_2k.jpg" id="1_gq56b"]
+[ext_resource type="Texture2D" uid="uid://pyg0v2yxbyl7" path="res://pavement tiles/granite_tile_diff_1k.jpg" id="2_w4atx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_261cp"]
+albedo_texture = ExtResource("1_gq56b")
+roughness = 0.3
+emission_enabled = true
+emission = Color(0.993219, 0.707754, 0, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ia5cy"]
+albedo_texture = ExtResource("1_gq56b")
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gq56b"]
+albedo_texture = ExtResource("2_w4atx")
+metallic = 0.75
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0cgn"]
+albedo_texture = ExtResource("2_w4atx")
+metallic = 0.75
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oveqj"]
+albedo_texture = ExtResource("2_w4atx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_atpyl"]
+albedo_texture = ExtResource("2_w4atx")
+metallic = 0.75
+roughness = 0.3
+
+[node name="Node3D" type="Node3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.55051, 0)
+light_color = Color(1, 0.816191, 0.665196, 1)
+light_energy = 6.0
+shadow_enabled = true
+omni_range = 21.9255
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000301719, 4.47855, -0.000367641)
+material_override = SubResource("StandardMaterial3D_261cp")
+transparency = 0.8
+radius = 0.137508
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGSphere3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.121814, 0)
+radius = 0.0654297
+height = 0.203552
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 4.44766, 0)
+material_override = SubResource("StandardMaterial3D_ia5cy")
+transparency = 0.5
+cast_shadow = 0
+radius = 0.612793
+height = 0.822489
+sides = 6
+smooth_faces = false
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 4.15604, 0)
+material_override = SubResource("StandardMaterial3D_gq56b")
+cast_shadow = 0
+radius = 0.676758
+height = 0.242998
+sides = 6
+smooth_faces = false
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 4.44766, 0)
+material_override = SubResource("StandardMaterial3D_b0cgn")
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.476823, 0)
+radius = 0.676758
+height = 0.310464
+sides = 6
+smooth_faces = false
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGCombiner3D2/CSGCylinder3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144583, 0)
+radius = 0.435059
+height = 0.511098
+sides = 6
+smooth_faces = false
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="CSGCombiner3D2/CSGCylinder3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0678353, 0)
+radius = 0.317871
+height = 0.346268
+
+[node name="CSGCombiner3D3" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.89003, 0)
+material_override = SubResource("StandardMaterial3D_oveqj")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D3"]
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.463822, 0)
+radius = 0.317871
+height = 1.14758
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+material_override = SubResource("StandardMaterial3D_atpyl")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56055, 0)
+radius = 0.158203
+height = 5.12109
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 3.98766, 0)
+radius = 0.317871
+height = 0.816319
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 4.04112, 0)
+radius = 0.456543
+height = 0.290994

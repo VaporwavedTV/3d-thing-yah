@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://mjoqvi2rtlbk"]
+
+[ext_resource type="Material" uid="uid://cul1yk3mgvavd" path="res://Dock looking tex.tres" id="1_x88xt"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.845226, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CSGCombiner3D4" type="CSGCombiner3D" parent="."]
+transform = Transform3D(2.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("1_x88xt")
+use_collision = true
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="CSGCombiner3D4"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D4/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.255798, 0.26947, -0.330078)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D4/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.744873, 0.269, 0.1)
+size = Vector3(0.110254, 1, 0.2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D4/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.756104, 0.269, -0.768953)
+size = Vector3(0.087793, 1, 0.2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D4/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.230562, 0.269, -0.768953)
+size = Vector3(0.103906, 1, 0.2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D4/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.223129, 0.269, 0.1)
+size = Vector3(0.105981, 1, 0.2)
+
+[node name="CSGCombiner3D3" type="CSGCombiner3D" parent="CSGCombiner3D4"]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D4/CSGCombiner3D3"]
+transform = Transform3D(0.75033, -0.661063, 0, 0.661063, 0.75033, 0, 0, 0, 1, 0.269257, 0.23566, 0.0981095)
+size = Vector3(0.2, 1.08887, 0.2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D4/CSGCombiner3D3"]
+transform = Transform3D(0.75033, -0.661063, 0, 0.661063, 0.75033, 0, 0, 0, 1, 0.269257, 0.23566, -0.764249)
+size = Vector3(0.2, 1.08887, 0.2)
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="CSGCombiner3D4"]
+transform = Transform3D(-4.37114e-08, -1.07476, 0, 1, -4.69792e-08, 0, 0, 0, 1, 0.545782, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D4/CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.255798, 0.26947, -0.330078)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D4/CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.269, 0.1)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D4/CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.269, -0.768953)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D4/CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.182515, 0.269, -0.768953)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D4/CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17612, 0.269, 0.1)
+size = Vector3(0.2, 1, 0.2)

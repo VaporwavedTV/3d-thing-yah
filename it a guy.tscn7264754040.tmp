@@ -1,0 +1,215 @@
+[gd_scene load_steps=15 format=3 uid="uid://0xhmuqg3bgbi"]
+
+[ext_resource type="Script" uid="uid://b6sjqcn0k4rwj" path="res://it_a_guy.gd" id="1_pfdkg"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_dtuy3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pfdkg"]
+radius = 0.897872
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pfdkg"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pfdkg"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sxqoe"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ummxs"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wmh5o"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sxqoe"]
+height = 2.90332
+radius = 1.13623
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wxgqr"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_f2ctj"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8egir"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wunwo"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8nmac"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+script = ExtResource("1_pfdkg")
+
+[node name="Skeleton3D" type="Skeleton3D" parent="."]
+
+[node name="ConeTwistJoint3D4" type="ConeTwistJoint3D" parent="Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.00355, -2.06742)
+node_a = NodePath("../Node3D4/right upper arm")
+node_b = NodePath("../torso")
+
+[node name="ConeTwistJoint3D3" type="ConeTwistJoint3D" parent="Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.94758, 0.765116)
+node_a = NodePath("../Node3D3/left upper arm")
+node_b = NodePath("../torso")
+
+[node name="ConeTwistJoint3D2" type="ConeTwistJoint3D" parent="Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07812, -1.26913)
+node_a = NodePath("../Node3D2/right upper leg")
+node_b = NodePath("../torso")
+
+[node name="ConeTwistJoint3D" type="ConeTwistJoint3D" parent="Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07812, 0.0695107)
+node_a = NodePath("../Node3D/left upper leg")
+node_b = NodePath("../torso")
+
+[node name="ConeTwistJoint3D5" type="ConeTwistJoint3D" parent="Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.18123, -0.595374)
+node_a = NodePath("../Node3D5/Head")
+node_b = NodePath("../torso")
+
+[node name="Node3D5" type="Node3D" parent="Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.183948, 0)
+
+[node name="Head" type="RigidBody3D" parent="Skeleton3D/Node3D5" groups=["grab"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.37866, -0.630499)
+
+[node name="CollisionShape3D3" type="MeshInstance3D" parent="Skeleton3D/Node3D5/Head"]
+transform = Transform3D(1.735, 0, 0, 0, 1.735, 0, 0, 0, 1.735, 0, -1.01696, -0.000683069)
+mesh = SubResource("SphereMesh_dtuy3")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton3D/Node3D5/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02165, 0)
+shape = SubResource("SphereShape3D_pfdkg")
+
+[node name="Node3D" type="Node3D" parent="Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.183948, 0)
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="Skeleton3D/Node3D"]
+node_a = NodePath("../left upper leg")
+node_b = NodePath("../RigidBody3D3")
+angular_limit/enable = true
+angular_limit/upper = 0.174533
+angular_limit/lower = -2.61799
+
+[node name="left upper leg" type="RigidBody3D" parent="Skeleton3D/Node3D" groups=["grab"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1181, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Skeleton3D/Node3D/left upper leg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02165, 0)
+mesh = SubResource("CylinderMesh_pfdkg")
+skeleton = NodePath("../CollisionShape3D2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton3D/Node3D/left upper leg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02165, 0)
+shape = SubResource("CylinderShape3D_pfdkg")
+
+[node name="RigidBody3D3" type="RigidBody3D" parent="Skeleton3D/Node3D" groups=["grab"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.21177, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton3D/Node3D/RigidBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.08697, 0)
+shape = SubResource("CylinderShape3D_pfdkg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Skeleton3D/Node3D/RigidBody3D3/CollisionShape3D2"]
+mesh = SubResource("CylinderMesh_sxqoe")
+
+[node name="Node3D2" type="Node3D" parent="Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.183948, -1.25646)
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="Skeleton3D/Node3D2"]
+node_a = NodePath("../right upper leg")
+node_b = NodePath("../RigidBody3D3")
+angular_limit/enable = true
+angular_limit/upper = 0.174533
+angular_limit/lower = -2.61799
+
+[node name="right upper leg" type="RigidBody3D" parent="Skeleton3D/Node3D2" groups=["grab"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1181, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton3D/Node3D2/right upper leg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02165, 0)
+shape = SubResource("CylinderShape3D_pfdkg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Skeleton3D/Node3D2/right upper leg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03177, 0)
+mesh = SubResource("CylinderMesh_ummxs")
+
+[node name="RigidBody3D3" type="RigidBody3D" parent="Skeleton3D/Node3D2" groups=["grab"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.21177, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton3D/Node3D2/RigidBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.08697, 0)
+shape = SubResource("CylinderShape3D_pfdkg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Skeleton3D/Node3D2/RigidBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.10034, 0)
+mesh = SubResource("CylinderMesh_wmh5o")
+
+[node name="torso" type="RigidBody3D" parent="Skeleton3D" groups=["grab"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton3D/torso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.62386, -0.60499)
+shape = SubResource("CylinderShape3D_sxqoe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Skeleton3D/torso"]
+transform = Transform3D(2.185, 0, 0, 0, 1.45013, 0, 0, 0, 2.185, 0, 3.61197, -0.566282)
+mesh = SubResource("CylinderMesh_wxgqr")
+
+[node name="Node3D3" type="Node3D" parent="Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 0.965536, 0.260269, 0, -0.260269, 0.965536, 0, 2.79336, 1.4425)
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="Skeleton3D/Node3D3"]
+node_a = NodePath("../left upper arm")
+node_b = NodePath("../RigidBody3D3")
+angular_limit/enable = true
+angular_limit/upper = 0.174533
+angular_limit/lower = -2.61799
+
+[node name="left upper arm" type="RigidBody3D" parent="Skeleton3D/Node3D3" groups=["grab"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1181, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton3D/Node3D3/left upper arm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02165, 0)
+shape = SubResource("CylinderShape3D_pfdkg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Skeleton3D/Node3D3/left upper arm"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, -1.02014, -0.0275621)
+mesh = SubResource("CylinderMesh_f2ctj")
+
+[node name="RigidBody3D3" type="RigidBody3D" parent="Skeleton3D/Node3D3" groups=["grab"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.21177, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton3D/Node3D3/RigidBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.08697, 0)
+shape = SubResource("CylinderShape3D_pfdkg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Skeleton3D/Node3D3/RigidBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 3.09353, -0.00637484)
+mesh = SubResource("CylinderMesh_8egir")
+
+[node name="Node3D4" type="Node3D" parent="Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 0.972921, -0.231137, 0, 0.231137, 0.972921, 0, 2.79336, -2.57154)
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="Skeleton3D/Node3D4"]
+node_a = NodePath("../right upper arm")
+node_b = NodePath("../RigidBody3D3")
+angular_limit/enable = true
+angular_limit/upper = 0.174533
+angular_limit/lower = -2.61799
+
+[node name="right upper arm" type="RigidBody3D" parent="Skeleton3D/Node3D4" groups=["grab"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1181, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton3D/Node3D4/right upper arm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02165, 0)
+shape = SubResource("CylinderShape3D_pfdkg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Skeleton3D/Node3D4/right upper arm"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, -1.00438, 0.0123715)
+mesh = SubResource("CylinderMesh_wunwo")
+
+[node name="RigidBody3D3" type="RigidBody3D" parent="Skeleton3D/Node3D4" groups=["grab"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.21177, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton3D/Node3D4/RigidBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.08697, 0)
+shape = SubResource("CylinderShape3D_pfdkg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Skeleton3D/Node3D4/RigidBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 3.09505, 0.0157776)
+mesh = SubResource("CylinderMesh_8nmac")

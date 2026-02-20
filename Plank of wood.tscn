@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpjd1cmqv30a7"]
+
+[ext_resource type="Material" uid="uid://cul1yk3mgvavd" path="res://Dock looking tex.tres" id="1_wsnn6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hdqeb"]
+size = Vector3(4.8038, 0.261406, 0.532166)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["Interactable", "grab"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95605, -0.40332, -0.30127)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00743091, -0.00413132, 0.00350952)
+shape = SubResource("BoxShape3D_hdqeb")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00162971, 0.000217378, 0.0046773)
+material_override = ExtResource("1_wsnn6")
+size = Vector3(4.81163, 0.261108, 0.530441)

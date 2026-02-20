@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://b33nddiyqkan3"]
+
+[ext_resource type="Material" uid="uid://cul1yk3mgvavd" path="res://Dock looking tex.tres" id="1_cu717"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+material_override = ExtResource("1_cu717")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95605, -0.40332, -0.30127)
+size = Vector3(4.91211, 0.193359, 0.397461)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.426474, 0, -0.9045, -0.102533, 0.993554, -0.0483448, 0.898669, 0.113359, 0.423725, 1.95605, -0.335733, 1.0256)
+size = Vector3(4.91211, 0.193359, 0.397461)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.0363416, -0.0969882, -0.994622, -0.786989, -0.616171, 0.0313293, -0.615895, 0.781618, -0.0987213, 2.65184, 1.4618, -0.325231)
+size = Vector3(4.91211, 0.193359, 0.397461)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.784008, 0.0766182, -0.616005, 0.620751, -0.0967687, 0.778013, -5.95882e-09, -0.992354, -0.123428, 1.63105, 1.1271, 0.580817)
+size = Vector3(4.91211, 0.193359, 0.397461)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.817925, -0.563938, -0.113898, 0.149252, 0.0167937, 0.988657, -0.555628, -0.825646, 0.0979046, 2.00413, 0.038464, 1.1193)
+size = Vector3(4.91211, 0.193359, 0.523384)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.431665, -0.543525, 0.719893, 0.752008, 0.223894, 0.619964, -0.498145, 0.808982, 0.312088, 2.73612, 0.712797, 0.806278)
+size = Vector3(4.58008, 0.193359, 0.397461)

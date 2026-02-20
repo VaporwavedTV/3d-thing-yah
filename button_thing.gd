@@ -1,30 +1,13 @@
 extends CSGCylinder3D
 
-var car = 0
-
-
 @onready var scene = load("res://object_box.tscn")
+var index = 1
 
-func _physics_process(float):
+func interact():
 	
 	
-	var target_node = get_node("/root/world/Button thing")
+	var scene_to_spawn = scene.instantiate()
+	add_child(scene_to_spawn)
+	get_child(index).global_position = self.global_position
+	index += 1
 	
-	
-	
-	if visible:
-		if Input.is_action_just_pressed("E"):
-			
-			var scene_to_spawn = scene.instantiate()
-			add_child(scene_to_spawn)
-			scene
-			target_node.position = target_node.position
-			
-			
-			
-			car += 1
-			
-			print(car)
-			
-			
-			

@@ -43,7 +43,7 @@ func _process(_delta):
 	
 	if answer_got == true:
 		
-		get_node("/root/World/AllThings/Node3D8/CSGCombiner3D").thisappear()
+		
 		
 		answer_got = false
 		

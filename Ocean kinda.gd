@@ -1,7 +1,7 @@
 extends CSGBox3D
 
 @onready var player = get_node("/root/World").find_child("player", true)
-@onready var Think = get_node("/root/World/AllThings/Control")
+@onready var Think = get_node("/root/World/Player Thinking Box")
 
 var underwater = false
 

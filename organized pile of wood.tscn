@@ -1,0 +1,120 @@
+[gd_scene load_steps=2 format=3 uid="uid://jpxwia6a6dyg"]
+
+[ext_resource type="Material" uid="uid://cul1yk3mgvavd" path="res://Dock looking tex.tres" id="1_cpl7g"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.66374, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("1_cpl7g")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, -0.384063)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 0.185287)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 0.795986)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 1.38141)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 2.07171)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.154202, 0.120528)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, -0.384063)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 0.185287)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 0.795986)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 1.38141)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 2.07171)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.307431, -0.277042)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, -0.384063)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 0.185287)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 0.795986)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 1.38141)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 2.07171)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGCombiner3D3" type="CSGCombiner3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456936, 0.0390248)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, -0.384063)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 0.185287)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 0.795986)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 1.38141)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, -0.236139, 2.07171)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.66374, 0, 0, 0, 1, 1.98509, 0.156382, 0.76123)
+visible = false
+use_collision = true
+size = Vector3(5.06882, 0.812012, 3.4082)
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="."]
+material_override = ExtResource("1_cpl7g")
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(0.996809, 0.0268618, 0.075165, 0.00148745, -0.947762, 0.318977, 0.0798066, -0.317847, -0.944778, 2, 0.757644, 1.87328)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(0.0217439, -0.998543, -0.0493816, -0.863867, 0.00609777, -0.503684, 0.503251, 0.0536111, -0.862476, 2, 1.04567, 2.09234)
+size = Vector3(5, 0.527722, 0.133301)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(0.560795, -0.781005, -0.274847, -0.701403, -0.27175, -0.658927, 0.439935, 0.562302, -0.700195, 2.56353, 1.04567, 2.39324)
+size = Vector3(5, 0.527722, 0.133301)

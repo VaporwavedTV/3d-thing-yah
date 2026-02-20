@@ -2,7 +2,7 @@ extends Node3D
 
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	rotate_y(0.02)
 	

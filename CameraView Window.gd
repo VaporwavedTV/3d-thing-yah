@@ -21,7 +21,7 @@ func _process(_delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			player.yesmoving()
 			playerhead.yes_move()
-			$"/root/World/AllThings/player/head/Camera3D/raycast".collide_with_bodies = true
+			$"/root/World/player/head/Camera3D/raycast".collide_with_bodies = true
 			$/root/World/AllThings/screen/CSGBox3D15.turnon = false
 			
 		

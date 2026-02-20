@@ -1,37 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://o0vk6f0ymboi"]
+[gd_scene load_steps=2 format=3 uid="uid://o0vk6f0ymboi"]
 
-[ext_resource type="PackedScene" uid="uid://besxbknfjv4oq" path="res://3d dialogue box.tscn" id="2_8m6dd"]
 [ext_resource type="Script" uid="uid://bvlq7170lp413" path="res://microphong.gd" id="2_ott2a"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_j2k6v"]
-viewport_path = NodePath("SubViewport")
-
 [node name="Node3D" type="Node3D"]
-
-[node name="Sprite3D" parent="." instance=ExtResource("2_8m6dd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54689, 0)
-visible = false
-texture = SubResource("ViewportTexture_j2k6v")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
-offset_left = 387.0
-offset_top = 745.0
-offset_right = 970.0
-offset_bottom = 770.0
-scale = Vector2(1.49714, 1.57714)
-text = " Hey there, hows it going!"
-fit_content = true
-
-[node name="ColorRect" type="ColorRect" parent="RichTextLabel"]
-show_behind_parent = true
-layout_mode = 0
-offset_left = -69.4657
-offset_top = -80.1528
-offset_right = -29.4657
-offset_bottom = -40.1528
-scale = Vector2(18.2652, 4.78998)
-color = Color(0.0650664, 7.5821e-06, 0.0729483, 0.396078)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." groups=["Interactable"]]
 use_collision = true
